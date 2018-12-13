@@ -7,26 +7,24 @@ html {
 
 .container {
   display: grid;
-  grid-template-columns: 35px auto auto 10px;
+  grid-template-columns: 1px auto auto 1px;
   grid-template-rows: 35px 400px 400px;
 }
 
-.vertical {
+.top-div {
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  writing-mode: horizontal-tb;
+  flex-direction: horizontal;
   justify-content: space-between;
 }
 
 .title-font {
   font-family: 'Major Mono Display', monospace;
-  font-size: 35px
+  font-size: 35px;
+  text-align: center;
 }
 
 h4 {
   font-family: 'Roboto Mono', monospace;
-  float: center;
 }
 
 #map {
