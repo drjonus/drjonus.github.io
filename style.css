@@ -71,3 +71,19 @@ h4 {
   grid-row-end: 4;
   background-color: blueviolet;
 }
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+a:active {
+  color: black;
+}
