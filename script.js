@@ -45,5 +45,3 @@ function initialize() {
 }
 
 initialize();
-
-.addEventListener()
