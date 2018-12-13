@@ -34,7 +34,7 @@ function initialize() {
   function addMarker(e){
 	// Add marker to map at click location; add popup window
     newMarker = new L.marker(e.latlng).addTo(map);
-    newMarker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    newMarker.bindPopup(`{newMarker.getLatLng()}`).openPopup();
   }
 
   map.on('locationfound', onLocationFound);
