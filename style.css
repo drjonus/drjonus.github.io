@@ -8,16 +8,15 @@ html {
 .container {
   display: grid;
   grid-template-columns: 35px auto auto 10px;
-  grid-template-rows: 400px 400px;
+  grid-template-rows: 35px 400px 400px;
 }
 
 .vertical {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  align-content: center;
+  text-align: center;
+  writing-mode: horizontal-tb;
+  justify-content: space-between;
 }
 
 .title-font {
@@ -27,6 +26,7 @@ html {
 
 h4 {
   font-family: 'Roboto Mono', monospace;
+  float: center;
 }
 
 #map {
@@ -38,14 +38,14 @@ h4 {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 2;
 }
 
 .item-b {
   grid-column-start: 2;
   grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
   background-color: red;
   border-radius: 5px;
 }
@@ -53,16 +53,16 @@ h4 {
 .item-c {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
   background-color: aqua;
 }
 
 .item-d {
   grid-column-start: 3;
   grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
   background-color: peachpuff;
 }
 
@@ -70,6 +70,6 @@ h4 {
   grid-column-start: 4;
   grid-column-end: 5;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 4;
   background-color: blueviolet;
 }

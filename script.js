@@ -1,4 +1,6 @@
-let map, newMarker;
+let map, newMarker; markers;
+
+markers = {};
 
 function initialize() {
   map = L.map('map').setView([45.527453, -122.668923], 10)
@@ -43,3 +45,5 @@ function initialize() {
 }
 
 initialize();
+
+.addEventListener()
