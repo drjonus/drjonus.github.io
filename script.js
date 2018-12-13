@@ -1,4 +1,4 @@
-let map;
+let map, newMarker;
 
 function initialize() {
   map = L.map('map').fitWorld();
@@ -31,10 +31,13 @@ function initialize() {
       alert(e.message);
   }
 
+  function addMarker(e){
+	// Add marker to map at click location; add popup window
+    newMarker = new L.marker(e.latlng).addTo(map);
+  }
+
   map.on('locationfound', onLocationFound);
   map.on('locationerror', onLocationError);
-
-  map.locate({setView: true, maxZoom: 16});
 }
 
 initialize();

@@ -47,7 +47,7 @@ h4 {
   grid-row-start: 1;
   grid-row-end: 2;
   background-color: red;
-  border-radius: 15%;
+  border-radius: 5px;
 }
 
 .item-c {
