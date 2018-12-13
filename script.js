@@ -1,4 +1,4 @@
-let map, newMarker; markers;
+let map, newMarker, markers;
 
 markers = {};
 
