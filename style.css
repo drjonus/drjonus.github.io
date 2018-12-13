@@ -15,6 +15,7 @@ html {
   display: flex;
   flex-direction: column;
   text-align: center;
+  writing-mode: vertical-lr;
 }
 
 #map {
@@ -24,40 +25,40 @@ html {
 
 .item-a {
   grid-column-start: 1;
-  grid-column-end: 1;
+  grid-column-end: 2;
   grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-end: 3;
   background-color: yellow;
 }
 
 .item-b {
   grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 1;
-  grid-row-end: 1;
+  grid-row-end: 2;
   background-color: red;
 }
 
 .item-c {
   grid-column-start: 2;
-  grid-column-end: 2;
+  grid-column-end: 3;
   grid-row-start: 2;
-  grid-row-end: 2;
+  grid-row-end: 3;
   background-color: aqua;
 }
 
 .item-d {
   grid-column-start: 3;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 2;
-  grid-row-end: 2;
+  grid-row-end: 3;
   background-color: peachpuff;
 }
 
 .item-e {
   grid-column-start: 4;
-  grid-column-end: 4;
+  grid-column-end: 5;
   grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-end: 3;
   background-color: blueviolet;
 }
