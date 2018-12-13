@@ -17,6 +17,12 @@ html {
   text-align: left;
   writing-mode: vertical-lr;
   text-orientation: upright;
+  align-content: center;
+}
+
+.title-font {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 35px
 }
 
 #map {
