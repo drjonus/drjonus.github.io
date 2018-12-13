@@ -6,6 +6,7 @@ html {
 }
 
 .container {
+  display: grid;
   grid-template-columns: 20px auto auto 10px;
   grid-template-rows: 45% auto;
 }
