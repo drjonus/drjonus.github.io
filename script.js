@@ -38,6 +38,7 @@ function initialize() {
 
   map.on('locationfound', onLocationFound);
   map.on('locationerror', onLocationError);
+  map.on('click', addMarker);
 }
 
 initialize();
