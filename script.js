@@ -1,7 +1,7 @@
 let map, newMarker;
 
 function initialize() {
-  map = L.map('map').fitWorld();
+  map = L.map('map').setView([45.527453, -122.668923], 10)
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
       maxZoom: 18,
@@ -34,6 +34,7 @@ function initialize() {
   function addMarker(e){
 	// Add marker to map at click location; add popup window
     newMarker = new L.marker(e.latlng).addTo(map);
+    newMarker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
   }
 
   map.on('locationfound', onLocationFound);
