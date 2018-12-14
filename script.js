@@ -51,7 +51,7 @@ function initialize() {
   newPoint = document.createElement("div");
   newPoint.style.display = "flex";
   newPoint.style.justifyContent = "space-evenly";
-  newPoint.style.flexDirection = "columns";
+  newPoint.style.flexDirection = "column";
   newPoint.style.width = "100%";
   newPoint.style.marginTop = "5px";
 
