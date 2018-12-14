@@ -43,8 +43,8 @@ function initialize() {
     popString = document.createElement("li");
     popString.style.display = "flex";
     popString.innerHTML += newMarker._popup.getContent();
+    popString.appendChild(compareBtn);
     newPoint.appendChild(popString);
-    newPoint.append(compareBtn);
   }
 
   map.on('locationfound', onLocationFound);
