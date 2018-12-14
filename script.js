@@ -58,7 +58,7 @@ function initialize() {
   newPoint.style.width = "100%";
   newPoint.style.marginTop = "5px";
 
-  compareBtn = document.createElement("button");
+  compareBtn = document.createElement("input");
   compareBtn.type = "radio";
 
   target = document.getElementById("pointTarget");
