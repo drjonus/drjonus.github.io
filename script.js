@@ -1,6 +1,6 @@
-let map, newMarker, markers;
+let map, newMarker, markers, newPoint;
 
-markers = {};
+markers = [];
 
 function initialize() {
   map = L.map('map').setView([45.527453, -122.668923], 10)
@@ -37,11 +37,23 @@ function initialize() {
 	// Add marker to map at click location; add popup window
     newMarker = new L.marker(e.latlng).addTo(map);
     newMarker.bindPopup(`${newMarker.getLatLng()}`).openPopup();
+    markers.push(newMarker);
+    newPoint.appendChild(newMarker[popup.content]);
   }
 
   map.on('locationfound', onLocationFound);
   map.on('locationerror', onLocationError);
   map.on('click', addMarker);
-}
+
+  newPoint = document.createElement("div");
+  newPoint.style.display = "flex";
+  newPoint.style.justifyContent = "space-evenly";
+  newPoint.style.width = "100%";
+  newPoint.style.marginTop = "5px";
+
+  target = document.getElementById("pointTarget");
+  target.appendChild(newPoint);
+
+};
 
 initialize();
