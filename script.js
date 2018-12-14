@@ -1,4 +1,4 @@
-let map, newMarker, markers, newPoint, popString;
+let map, newMarker, markers, newPoint, popString, myLocation;
 
 markers = [];
 
@@ -24,7 +24,7 @@ function initialize() {
   function onLocationFound(e) {
       var radius = e.accuracy / 2;
 
-      L.marker(e.latlng).addTo(map)
+      myLocation = L.marker(e.latlng).addTo(map)
           .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
       L.circle(e.latlng, radius).addTo(map);
