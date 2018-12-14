@@ -1,4 +1,4 @@
-let map, newMarker, markers, newPoint, popString, myLocation;
+let map, newMarker, markers, newPoint, popString, myLocation, compareBtn;
 
 markers = [];
 
@@ -44,6 +44,7 @@ function initialize() {
     popString.style.display = "flex";
     popString.innerHTML += newMarker._popup.getContent();
     newPoint.appendChild(popString);
+    newPoint.append(compareBtn);
   }
 
   map.on('locationfound', onLocationFound);
@@ -57,9 +58,32 @@ function initialize() {
   newPoint.style.width = "100%";
   newPoint.style.marginTop = "5px";
 
+  compareBtn = document.createElement("button");
+  compareBtn.type = "radio";
+
   target = document.getElementById("pointTarget");
   target.appendChild(newPoint);
 
 };
+
+function getDistance(origin, destination) {
+  // return distance in meters
+  var lon1 = toRadian(origin[1]),
+      lat1 = toRadian(origin[0]),
+      lon2 = toRadian(destination[1]),
+      lat2 = toRadian(destination[0]);
+
+  var deltaLat = lat2 - lat1;
+  var deltaLon = lon2 - lon1;
+
+  var a = Math.pow(Math.sin(deltaLat/2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(deltaLon/2), 2);
+  var c = 2 * Math.asin(Math.sqrt(a));
+  var EARTH_RADIUS = 6371;
+  return c * EARTH_RADIUS * 1000;
+}
+function toRadian(degree) {
+  return degree*Math.PI/180;
+}
+var distance = getDistance([lat1, lng1], [lat2, lng2])
 
 initialize();
