@@ -34,7 +34,7 @@ function initialize() {
     } else if (myLocationList.includes(myLocation) === true) {
       for( var i = 0; i < myLocationList.length-1; i++){
         if ( myLocationList[i] === myLocation) {
-          arr.splice(i, 1);
+          myLocationList.splice(i, 1);
         }
       }
       var radius = e.accuracy / 2;
