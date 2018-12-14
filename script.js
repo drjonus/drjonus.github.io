@@ -22,8 +22,6 @@ function initialize() {
     follow: false
   }).addTo(map);
 
-  setInterval(control.locate, interval);
-
   function onLocationFound(e) {
     if (myLocationList.includes(myLocation) === false) {
       var radius = e.accuracy / 2;
