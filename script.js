@@ -17,7 +17,8 @@ function initialize() {
     flyTo: true,
     showPopup: false,
     locateOptions: {enableHighAccuracy: true, maxZoom: 15},
-    strings: {title: "Find current location", outsideMapBoundsMsg: "TriMet does not serve this location"}
+    strings: {title: "Find current location"},
+    follow: false
   }).addTo(map);
 
   function onLocationFound(e) {
