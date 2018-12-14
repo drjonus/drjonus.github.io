@@ -38,7 +38,7 @@ function initialize() {
     newMarker = new L.marker(e.latlng).addTo(map);
     newMarker.bindPopup(`${newMarker.getLatLng()}`).openPopup();
     markers.push(newMarker);
-    newPoint.appendChild(newMarker[popup.content]);
+    newPoint.appendChild(newMarker.getContent());
   }
 
   map.on('locationfound', onLocationFound);
