@@ -21,8 +21,6 @@ function initialize() {
     follow: false
   }).addTo(map);
 
-  setInterval(control.locate, interval);
-
   function onLocationFound(e) {
     myLocation = L.marker(e.latlng).remove();
     var radius = e.accuracy / 2;
