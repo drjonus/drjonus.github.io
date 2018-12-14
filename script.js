@@ -66,7 +66,7 @@ function initialize() {
 
 };
 
-let lat1, lat2, lon1, lon2;
+let lat1, lat2, lng1, lng2;
 
 function getDistance(origin, destination) {
   // return distance in meters
