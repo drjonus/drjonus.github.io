@@ -30,6 +30,16 @@ function initialize() {
           .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
       L.circle(e.latlng, radius).addTo(map);
+      myLocationList.push(myLocation);
+    } else if (myLocationList.includes(myLocation) === true) {
+      myLocationList.remove(myLocation);
+      var radius = e.accuracy / 2;
+
+      myLocation = L.marker(e.latlng).addTo(map)
+          .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+      L.circle(e.latlng, radius).addTo(map);
+      myLocationList.push(myLocation);
     }
   }
 
