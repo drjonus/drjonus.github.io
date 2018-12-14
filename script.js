@@ -32,7 +32,11 @@ function initialize() {
       L.circle(e.latlng, radius).addTo(map);
       myLocationList.push(myLocation);
     } else if (myLocationList.includes(myLocation) === true) {
-      myLocationList.remove(myLocation);
+      for( var i = 0; i < myLocationList.length-1; i++){
+        if ( myLocationList[i] === myLocation) {
+          arr.splice(i, 1);
+        }
+      }
       var radius = e.accuracy / 2;
 
       myLocation = L.marker(e.latlng).addTo(map)
