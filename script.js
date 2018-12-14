@@ -39,6 +39,7 @@ function initialize() {
     newMarker.bindPopup(`${newMarker.getLatLng()}`).openPopup();
     markers.push(newMarker);
     popString = document.createElement("li");
+    popString.style.display = "flex";
     popString.innerHTML += newMarker._popup.getContent();
     newPoint.appendChild(popString);
   }
@@ -50,6 +51,7 @@ function initialize() {
   newPoint = document.createElement("div");
   newPoint.style.display = "flex";
   newPoint.style.justifyContent = "space-evenly";
+  newPoint.style.flexDirection = "columns";
   newPoint.style.width = "100%";
   newPoint.style.marginTop = "5px";
 
