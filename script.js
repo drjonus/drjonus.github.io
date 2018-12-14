@@ -1,4 +1,4 @@
-let map, newMarker, markers, newPoint;
+let map, newMarker, markers, newPoint, popString;
 
 markers = [];
 
@@ -38,7 +38,9 @@ function initialize() {
     newMarker = new L.marker(e.latlng).addTo(map);
     newMarker.bindPopup(`${newMarker.getLatLng()}`).openPopup();
     markers.push(newMarker);
-    newPoint.appendChild(newMarker._popup.getContent());
+    popString = document.createElement("li");
+    popString.innerHTML += newMarker._popup.getContent();
+    newPoint.appendChild(popString);
   }
 
   map.on('locationfound', onLocationFound);
