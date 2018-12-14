@@ -1,6 +1,8 @@
-let map, newMarker, markers, newPoint, popString, myLocation, compareBtn;
+let map, newMarker, markers, newPoint, popString, myLocation;
 
 markers = [];
+
+let popName;
 
 function initialize() {
   map = L.map('map').setView([45.527453, -122.668923], 10)
@@ -36,13 +38,20 @@ function initialize() {
   }
 
   function addMarker(e){
-	// Add marker to map at click location; add popup window
+  // Add marker to map at click location; add popup window
+
+    let popName = document
+
     newMarker = new L.marker(e.latlng).addTo(map);
     newMarker.bindPopup(`${newMarker.getLatLng()}`).openPopup();
     markers.push(newMarker);
     popString = document.createElement("li");
     popString.style.display = "flex";
     popString.innerHTML += newMarker._popup.getContent();
+
+    let compareBtn = document.createElement("input");
+    compareBtn.type = "radio";
+
     popString.appendChild(compareBtn);
     newPoint.appendChild(popString);
   }
@@ -58,8 +67,7 @@ function initialize() {
   newPoint.style.width = "100%";
   newPoint.style.marginTop = "5px";
 
-  compareBtn = document.createElement("input");
-  compareBtn.type = "radio";
+
 
   target = document.getElementById("pointTarget");
   target.appendChild(newPoint);
