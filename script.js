@@ -50,7 +50,7 @@ function initialize() {
     popString.innerHTML += newMarker._popup.getContent();
 
     let compareBtn = document.createElement("input");
-    compareBtn.type = "radio";
+    compareBtn.type = "checkbox";
 
     popString.appendChild(compareBtn);
     newPoint.appendChild(popString);
