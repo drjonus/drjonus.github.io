@@ -1,7 +1,6 @@
-let map, newMarker, markers, newPoint, popString, myLocation, myLocationList;
+let map, newMarker, markers, newPoint, popString, myLocation;
 
 markers = [];
-myLocationList = [];
 
 function initialize() {
   map = L.map('map').setView([45.527453, -122.668923], 10)
@@ -22,29 +21,16 @@ function initialize() {
     follow: false
   }).addTo(map);
 
+  setInterval(control.locate, interval);
+
   function onLocationFound(e) {
-    if (myLocationList.includes(myLocation) === false) {
-      var radius = e.accuracy / 2;
+    myLocation = L.marker(e.latlng).remove();
+    var radius = e.accuracy / 2;
 
-      myLocation = L.marker(e.latlng).addTo(map)
-          .bindPopup("You are within " + radius + " meters from this point").openPopup();
+    myLocation = L.marker(e.latlng).addTo(map)
+      .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
-      L.circle(e.latlng, radius).addTo(map);
-      myLocationList.push(myLocation);
-    } else if (myLocationList.includes(myLocation) === true) {
-      for( var i = 0; i < myLocationList.length-1; i++){
-        if ( myLocationList[i] === myLocation) {
-          myLocationList.splice(i, 1);
-        }
-      }
-      var radius = e.accuracy / 2;
-
-      myLocation = L.marker(e.latlng).addTo(map)
-          .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-      L.circle(e.latlng, radius).addTo(map);
-      myLocationList.push(myLocation);
-    }
+    L.circle(e.latlng, radius).addTo(map);
   }
 
   function onLocationError(e) {
