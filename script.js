@@ -74,9 +74,7 @@ function initialize() {
   target = document.getElementById("pointTarget");
   target.appendChild(newPoint);
 
-  console.log(newPoint["_latlng"]);
-
-  // distanceAway = getDistance(newMarker["_latlng"], myLocation["_latlng"]);
+  distanceAway = getDistance(myCoordiantes, markerCoordinates);
 
 };
 
