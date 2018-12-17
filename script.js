@@ -1,4 +1,4 @@
-let map, newMarker, markers, newPoint, popString, myLocation, distanceAway, myCoordiantes;
+let map, newMarker, markers, newPoint, popString, myLocation, distanceAway, myCoordiantes, markerCoordinates;
 
 markers = [];
 
