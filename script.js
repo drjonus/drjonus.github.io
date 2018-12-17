@@ -65,7 +65,7 @@ function initialize() {
   newPoint.style.width = "100%";
   newPoint.style.marginTop = "5px";
 
-  distanceAway = getDistance(newMarker._latlng, myLocation._latlng);
+  distanceAway = getDistance(newMarker["_latlng"], myLocation["_latlng"]);
 
   target = document.getElementById("pointTarget");
   target.appendChild(newPoint);
