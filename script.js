@@ -1,4 +1,4 @@
-let map, newMarker, markers, newPoint, popString, myLocation, distanceAway;
+let map, newMarker, markers, newPoint, popString, myLocation, distanceAway, myCoordiantes;
 
 markers = [];
 
@@ -31,10 +31,12 @@ function initialize() {
       .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);
+    myCoordinates = myLocation['_latlng'];
+    console.log(myCoordinates);
   }
 
   function onLocationError(e) {
-      alert(e.message);
+    alert(e.message);
   }
 
   function addMarker(e){
@@ -52,6 +54,10 @@ function initialize() {
 
     popString.appendChild(compareBtn);
     newPoint.appendChild(popString);
+
+    markerCoordinates = newMarker['_latlng'];
+    console.log(markerCoordinates);
+
   }
 
   map.on('locationfound', onLocationFound);
@@ -68,7 +74,9 @@ function initialize() {
   target = document.getElementById("pointTarget");
   target.appendChild(newPoint);
 
-  distanceAway = getDistance(newMarker["_latlng"], myLocation["_latlng"]);
+  console.log(newPoint["_latlng"]);
+
+  // distanceAway = getDistance(newMarker["_latlng"], myLocation["_latlng"]);
 
 };
 
