@@ -1,4 +1,4 @@
-let map, newMarker, markers, newPoint, popString, myLocation;
+let map, newMarker, markers, newPoint, popString, myLocation, distanceAway;
 
 markers = [];
 
@@ -40,8 +40,6 @@ function initialize() {
   function addMarker(e){
   // Add marker to map at click location; add popup window
 
-    let popName = document
-
     newMarker = new L.marker(e.latlng).addTo(map);
     newMarker.bindPopup(`${newMarker.getLatLng()}`).openPopup();
     markers.push(newMarker);
@@ -67,7 +65,7 @@ function initialize() {
   newPoint.style.width = "100%";
   newPoint.style.marginTop = "5px";
 
-
+  distanceAway = getDistance(newMarker._latlng, myLocation._latlng);
 
   target = document.getElementById("pointTarget");
   target.appendChild(newPoint);
