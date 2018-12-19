@@ -32,6 +32,7 @@ function initialize() {
 
     L.circle(e.latlng, radius).addTo(map);
     myCoordinates = myLocation['_latlng'];
+    myCoordinates = Object.values(myCoordiantes);
     console.log(myCoordinates);
   }
 
@@ -56,8 +57,8 @@ function initialize() {
     newPoint.appendChild(popString);
 
     markerCoordinates = newMarker['_latlng'];
+    markerCoordinates = Object.values(markerCoordinates);
     console.log(markerCoordinates);
-
   }
 
   map.on('locationfound', onLocationFound);
