@@ -82,8 +82,8 @@ function initialize() {
 let lat1, lat2, lng1, lng2;
 
 function getDistance(origin, destination) {
-  origin = myCoordiantes;
-  destination = markerCoordinates;
+  // origin = myCoordiantes;
+  // destination = markerCoordinates;
   // return distance in meters
   lon1 = toRadian(origin[1]);
   lat1 = toRadian(origin[0]);
